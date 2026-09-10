@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Luhana 💜</title>
+
+<!-- FUENTES -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family: "Poppins", sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(205,150,255,.22),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(170,100,255,.18),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(220,150,255,.15),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #160024,
+            #2d0750,
+            #170026
+        );
+
+    color: white;
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   DECORACIÓN DEL FONDO
+===================================================== */
+
+.background-decoration {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 0;
+}
+
+.flower,
+.heart,
+.star {
+
+    position: absolute;
+
+    opacity: .65;
+
+    animation: floating 7s ease-in-out infinite;
+}
+
+.flower {
+    font-size: 38px;
+}
+
+.heart {
+    font-size: 25px;
+}
+
+.star {
+    font-size: 20px;
+}
+
+
+@keyframes floating {
+
+    0%,100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-25px)
+            rotate(8deg);
+
+    }
+}
+
+
+/* =====================================================
+   CUENTA REGRESIVA
+===================================================== */
+
+#countdownScreen {
+
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+.countdown-box {
+
+    width: min(850px, 95%);
+
+    padding: 55px 30px;
+
+    text-align: center;
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    border-radius: 35px;
+
+    background:
+        rgba(35,5,55,.68);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+
+        0 0 40px
+        rgba(181,92,255,.25),
+
+        inset 0 0 30px
+        rgba(255,255,255,.04);
+}
+
+
+.small-title {
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 30px;
+
+    color: #e7c4ff;
+}
+
+
+.main-title {
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size:
+        clamp(55px,10vw,100px);
+
+    margin:
+        5px 0 15px;
+
+    color: white;
+
+    text-shadow:
+
+        0 0 15px #c56aff,
+
+        0 0 30px #8d39c7;
+}
+
+
+.subtitle {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 23px;
+
+    color: #ead7f7;
+}
+
+
+.countdown {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin: 35px 0;
+}
+
+
+.time-box {
+
+    min-width: 125px;
+
+    padding: 20px 15px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid
+        rgba(255,255,255,.16);
+
+    box-shadow:
+        0 0 20px
+        rgba(170,80,255,.15);
+}
+
+
+.number {
+
+    display: block;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 48px;
+
+    font-weight: 700;
+
+    color: white;
+}
+
+
+.label {
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    color: #dcb7f5;
+}
+
+
+.lock-message {
+
+    margin-top: 25px;
+
+    color: #cfa9e8;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   PANTALLA DE EDAD
+===================================================== */
+
+#ageScreen {
+
+    display: none;
+
+    min-height: 100vh;
+
+    justify-content: center;
+
+    align-items: center;
+
+    position: relative;
+
+    z-index: 3;
+
+    padding: 25px;
+}
+
+
+.age-box {
+
+    max-width: 600px;
+
+    width: 95%;
+
+    padding: 50px 30px;
+
+    text-align: center;
+
+    background:
+        rgba(38,7,60,.78);
+
+    border-radius: 35px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.2);
+
+    box-shadow:
+        0 0 50px
+        rgba(188,88,255,.3);
+}
+
+
+.age-box h1 {
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 55px;
+
+    margin: 0 0 15px;
+
+    color: #f0d5ff;
+}
+
+
+.age-box p {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 24px;
+}
+
+
+.age-input {
+
+    width: 150px;
+
+    padding: 15px;
+
+    font-size: 28px;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid
+        #d79cff;
+
+    border-radius: 15px;
+
+    outline: none;
+}
+
+
+.age-button {
+
+    display: block;
+
+    margin:
+        25px auto 0;
+
+    padding:
+        13px 35px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #9d43d5,
+            #d179ff
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+.age-button:hover {
+
+    transform:
+        scale(1.05);
+
+    box-shadow:
+        0 0 25px
+        rgba(210,120,255,.7);
+}
+
+
+/* =====================================================
+   MENSAJE DE ERROR
+===================================================== */
+
+#errorMessage {
+
+    display: none;
+
+    margin-top: 20px;
+
+    color: #f0b7ff;
+
+    font-size: 14px;
+
+    animation: shake .4s;
+}
+
+
+@keyframes shake {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-8px);
+    }
+
+    50% {
+        transform: translateX(8px);
+    }
+
+    75% {
+        transform: translateX(-8px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+/* =====================================================
+   CARTA
+===================================================== */
+
+#letterScreen {
+
+    display: none;
+
+    position: relative;
+
+    z-index: 2;
+
+    padding:
+        50px 15px 100px;
+}
+
+
+.letter-container {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(255,248,255,.98),
+            rgba(250,238,255,.98)
+        );
+
+    color: #3d224b;
+
+    padding:
+        70px 65px;
+
+    border-radius: 8px;
+
+    box-shadow:
+
+        0 20px 70px
+        rgba(0,0,0,.45),
+
+        0 0 35px
+        rgba(210,130,255,.35);
+
+    overflow: hidden;
+}
+
+
+/* FLORES DE LAS ESQUINAS */
+
+.corner {
+
+    position: absolute;
+
+    font-size: 55px;
+
+    opacity: .7;
+}
+
+
+.corner.top-left {
+    top: 15px;
+    left: 20px;
+}
+
+
+.corner.top-right {
+    top: 15px;
+    right: 20px;
+}
+
+
+.corner.bottom-left {
+    bottom: 15px;
+    left: 20px;
+}
+
+
+.corner.bottom-right {
+    bottom: 15px;
+    right: 20px;
+}
+
+
+/* TÍTULO */
+
+.letter-title {
+
+    text-align: center;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size:
+        clamp(38px,7vw,62px);
+
+    color: #713b8f;
+
+    margin-bottom: 10px;
+}
+
+
+.line {
+
+    width: 80%;
+
+    height: 1px;
+
+    margin:
+        0 auto 35px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #9c61b7,
+            transparent
+        );
+}
+
+
+/* TEXTO */
+
+.letter-content {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 21px;
+
+    line-height: 1.75;
+
+    white-space: pre-line;
+
+    min-height: 300px;
+}
+
+
+/* FIRMA */
+
+.signature {
+
+    margin-top: 35px;
+
+    text-align: right;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 31px;
+
+    color: #713b8f;
+}
+
+
+.heart-final {
+
+    text-align: center;
+
+    margin-top: 45px;
+
+    font-size: 30px;
+
+    color: #a84bcf;
+
+    animation:
+        pulse 1.5s infinite;
+}
+
+
+@keyframes pulse {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media(max-width:600px) {
+
+    .countdown-box {
+
+        padding:
+            40px 15px;
+    }
+
+
+    .time-box {
+
+        min-width: 95px;
+    }
+
+
+    .number {
+
+        font-size: 35px;
+    }
+
+
+    .letter-container {
+
+        padding:
+            55px 25px;
+    }
+
+
+    .letter-content {
+
+        font-size: 18px;
+
+        line-height: 1.65;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     DECORACIONES
+===================================================== -->
+
+<div class="background-decoration">
+
+    <div class="flower"
+         style="left:5%;top:10%;">
+         🌸
+    </div>
+
+    <div class="flower"
+         style="left:15%;top:75%;">
+         🌷
+    </div>
+
+    <div class="flower"
+         style="right:7%;top:15%;">
+         💜
+    </div>
+
+    <div class="flower"
+         style="right:15%;top:75%;">
+         🌸
+    </div>
+
+    <div class="flower"
+         style="left:45%;top:5%;">
+         ✿
+    </div>
+
+
+    <div class="heart"
+         style="left:8%;top:40%;">
+         ♡
+    </div>
+
+    <div class="heart"
+         style="right:10%;top:45%;">
+         ♥
+    </div>
+
+    <div class="heart"
+         style="left:35%;bottom:10%;">
+         ♡
+    </div>
+
+    <div class="heart"
+         style="right:35%;bottom:20%;">
+         💜
+    </div>
+
+
+    <div class="star"
+         style="left:25%;top:20%;">
+         ✦
+    </div>
+
+    <div class="star"
+         style="right:25%;top:25%;">
+         ✧
+    </div>
+
+    <div class="star"
+         style="left:70%;top:70%;">
+         ✦
+    </div>
+
+    <div class="star"
+         style="left:15%;top:55%;">
+         ✧
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     CUENTA REGRESIVA
+===================================================== -->
+
+<section id="countdownScreen">
+
+    <div class="countdown-box">
+
+        <div class="small-title">
+
+            Hecho con cariño para ti,
+            Fabri ❤️
+
+        </div>
+
+
+        <h1 class="main-title">
+
+            Para Luhana
+
+        </h1>
+
+
+        <p class="subtitle">
+
+            Hay una pequeña sorpresa
+            esperando por ti... 💌
+
+        </p>
+
+
+        <div class="countdown">
+
+
+            <div class="time-box">
+
+                <span
+                    class="number"
+                    id="days">
+                    00
+                </span>
+
+                <span class="label">
+                    DÍAS
+                </span>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span
+                    class="number"
+                    id="hours">
+                    00
+                </span>
+
+                <span class="label">
+                    HORAS
+                </span>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span
+                    class="number"
+                    id="minutes">
+                    00
+                </span>
+
+                <span class="label">
+                    MINUTOS
+                </span>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span
+                    class="number"
+                    id="seconds">
+                    00
+                </span>
+
+                <span class="label">
+                    SEGUNDOS
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="lock-message">
+
+            🔒 Esta carta se abrirá el
+            23 de septiembre a las 12:00 a. m.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PREGUNTA DE EDAD
+===================================================== -->
+
+<section id="ageScreen">
+
+    <div class="age-box">
+
+
+        <h1>
+
+            Una última pregunta... 💜
+
+        </h1>
+
+
+        <p>
+
+            ¿Cuántos años está cumpliendo
+            Luhana? 🎂
+
+        </p>
+
+
+        <input
+
+            id="ageInput"
+
+            class="age-input"
+
+            type="number"
+
+            min="1"
+
+            max="100"
+
+            placeholder="Edad"
+
+        >
+
+
+        <button
+
+            class="age-button"
+
+            onclick="openLetter()"
+
+        >
+
+            Abrir mi carta 💌
+
+        </button>
+
+
+        <div
+            id="errorMessage">
+
+            Mmm... esa no es la edad correcta 😌💜
+            Inténtalo nuevamente.
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CARTA
+===================================================== -->
+
+<section id="letterScreen">
+
+
+    <div class="letter-container">
+
+
+        <div class="corner top-left">
+            🌸
+        </div>
+
+        <div class="corner top-right">
+            🌷
+        </div>
+
+        <div class="corner bottom-left">
+            🌷
+        </div>
+
+        <div class="corner bottom-right">
+            🌸
+        </div>
+
+
+        <h1 class="letter-title">
+
+            Para Luhana
+
+        </h1>
+
+
+        <div class="line"></div>
+
+
+        <div
+            id="letterText"
+            class="letter-content">
+        </div>
+
+
+        <div
+            id="signature"
+            class="signature"
+            style="display:none;">
+
+            Con cariño,<br>
+
+            Yo, desde 2026. ❤️
+
+        </div>
+
+
+        <div
+            id="finalHeart"
+            class="heart-final"
+            style="display:none;">
+
+            💜 ✨ 🌸 ✨ 💜
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+
+/* =====================================================
+   FECHA DE APERTURA
+===================================================== */
+
+/*
+   23 DE SEPTIEMBRE DE 2026
+   12:00 AM
+   HORA DE PERÚ (UTC-5)
+*/
+
+const openingDate =
+    new Date(
+        "2026-09-23T00:00:00-05:00"
+    ).getTime();
+
+
+
+/* =====================================================
+   CUENTA REGRESIVA
+===================================================== */
+
+function updateCountdown() {
+
+
+    const now =
+        new Date().getTime();
+
+
+    const distance =
+        openingDate - now;
+
+
+
+    /* SI YA LLEGÓ LA FECHA */
+
+    if (distance <= 0) {
+
+
+        document
+            .getElementById("countdownScreen")
+            .style.display = "none";
+
+
+        document
+            .getElementById("ageScreen")
+            .style.display = "flex";
+
+
+        clearInterval(timer);
+
+
+        return;
+
+    }
+
+
+
+    /* CALCULAR TIEMPO */
+
+
+    const days =
+        Math.floor(
+            distance /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (
+                distance %
+                (1000 * 60 * 60 * 24)
+            )
+            /
+            (1000 * 60 * 60)
+        );
+
+
+    const minutes =
+        Math.floor(
+            (
+                distance %
+                (1000 * 60 * 60)
+            )
+            /
+            (1000 * 60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (
+                distance %
+                (1000 * 60)
+            )
+            /
+            1000
+        );
+
+
+
+    /* MOSTRAR */
+
+    document
+        .getElementById("days")
+        .textContent =
+        String(days).padStart(2,"0");
+
+
+    document
+        .getElementById("hours")
+        .textContent =
+        String(hours).padStart(2,"0");
+
+
+    document
+        .getElementById("minutes")
+        .textContent =
+        String(minutes).padStart(2,"0");
+
+
+    document
+        .getElementById("seconds")
+        .textContent =
+        String(seconds).padStart(2,"0");
+
+}
+
+
+
+const timer =
+    setInterval(
+        updateCountdown,
+        1000
+    );
+
+
+updateCountdown();
+
+
+
+/* =====================================================
+   TEXTO DE LA CARTA
+===================================================== */
+
+const letter = `Para Luhana: 2022, 2026 y la del futuro 💌
+
+Feliz cumpleaños, Luhana. ❤️
+
+Hoy cumples 18 años, una edad que marca el comienzo de una nueva etapa, y no quería dejar pasar este día sin dedicarte unas palabras que realmente salgan de mi corazón.
+
+Deseo de todo corazón que esta nueva etapa llegue acompañada de muchos momentos bonitos, sueños cumplidos, nuevas experiencias y, sobre todo, muchas razones para sonreír. Espero que la vida te permita seguir creciendo como persona y que nunca cambies esa forma tan especial de ser que siempre te ha caracterizado.
+
+Desde que te conocí, hubo algo en ti que siempre llamó mi atención. Tu personalidad, tu manera de expresarte, la forma en que puedes hacer especial un momento sin siquiera intentarlo y, sobre todo, esa sonrisa tan bonita que tienes. Una sonrisa que, aunque quizás para ti sea algo normal, para mí siempre ha tenido algo diferente. Espero que nunca dejes de sonreír así, porque sinceramente es una de las cosas más bonitas que tienes.
+
+A veces pienso en todo lo que hemos vivido desde que nos conocimos y me doy cuenta de que, aunque el tiempo haya pasado y las cosas hayan cambiado, hay personas que simplemente dejan una huella. Tú eres una de ellas. Quizás hubo momentos en los que no supimos comunicarnos de la mejor manera, quizás nos alejamos un poco por circunstancias que pudieron ser diferentes, pero eso nunca hizo que dejara de valorar lo que significaste y significas para mí.
+
+No sé qué nos depare el futuro, pero sí sé que me alegra muchísimo haber coincidido contigo en esta vida. Me alegra haber conocido a esa chica de sonrisa bonita que, sin darse cuenta, llegó a ocupar un lugar especial en mi corazón.
+
+Hoy solo quiero verte feliz. Quiero que disfrutes mucho tus 18, que te consientan, que recibas todo el cariño que mereces y que guardes este día como un bonito recuerdo. Y si pudiera pedir algo por ti, pediría que nunca pierdas esa esencia que te hace ser tú, que sigas persiguiendo tus sueños y que, incluso en los días difíciles, encuentres siempre una razón para volver a sonreír.
+
+Gracias por haber formado parte de mi historia y por todos esos momentos que, aunque quizás parezcan pequeños, para mí tienen un significado especial.
+
+Feliz cumpleaños, Luhana. ❤️
+Felices 18 años a una persona realmente especial. Espero que este nuevo capítulo de tu vida sea increíble y que esté lleno de cosas tan bonitas como esa sonrisa que tanto me gusta.
+
+Con mucho cariño,
+Fabri ❤️`;
+
+
+
+/* =====================================================
+   ABRIR CARTA
+===================================================== */
+
+function openLetter() {
+
+
+    const age =
+        document
+            .getElementById("ageInput")
+            .value;
+
+
+    const error =
+        document
+            .getElementById("errorMessage");
+
+
+
+    /* NO ESCRIBIÓ NADA */
+
+    if (!age) {
+
+        error.textContent =
+            "Primero escribe la edad 💜";
+
+        error.style.display =
+            "block";
+
+        return;
+    }
+
+
+
+    /* =================================================
+       AQUÍ ESTÁ LA REGLA:
+
+       SOLO 18 ES CORRECTO
+    ================================================= */
+
+    if (Number(age) !== 18) {
+
+
+        error.textContent =
+            "Mmm... esa no es la edad correcta 😌💜 Inténtalo nuevamente.";
+
+
+        error.style.display =
+            "block";
+
+
+        /* BORRAR RESPUESTA */
+
+        document
+            .getElementById("ageInput")
+            .value = "";
+
+
+        /* VOLVER A ENFOCAR */
+
+        document
+            .getElementById("ageInput")
+            .focus();
+
+
+        return;
+
+    }
+
+
+
+    /* =================================================
+       SI ES 18 → ABRIR CARTA
+    ================================================= */
+
+
+    error.style.display =
+        "none";
+
+
+    document
+        .getElementById("ageScreen")
+        .style.display = "none";
+
+
+    document
+        .getElementById("letterScreen")
+        .style.display = "block";
+
+
+    /* EMPEZAR A ESCRIBIR */
+
+    typeWriter();
+
+}
+
+
+
+/* =====================================================
+   EFECTO MÁQUINA DE ESCRIBIR
+===================================================== */
+
+function typeWriter() {
+
+
+    const element =
+        document
+            .getElementById("letterText");
+
+
+    let index = 0;
+
+
+    /* VELOCIDAD */
+
+    const speed = 18;
+
+
+
+    function write() {
+
+
+        if (index < letter.length) {
+
+
+            element.textContent +=
+                letter.charAt(index);
+
+
+            index++;
+
+
+            setTimeout(
+                write,
+                speed
+            );
+
+
+        }
+
+        else {
+
+
+            /* MOSTRAR FIRMA */
+
+            document
+                .getElementById("signature")
+                .style.display = "block";
+
+
+            /* MOSTRAR CORAZONES */
+
+            document
+                .getElementById("finalHeart")
+                .style.display = "block";
+
+        }
+
+    }
+
+
+    write();
+
+}
+
+
+</script>
+
+</body>
+</html>
